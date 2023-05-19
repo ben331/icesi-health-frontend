@@ -26,7 +26,7 @@ var MODE = {
 
 var CURRENTMODE = MODE.BACKEND;
 
-var API_URL = "http://icesi-backend:8089/"
+var API_URL = process.env.API_URL || "http://icesi-backend:8089/ "
 
 app.post('/mode', function(req, res) {
   logger.debug('called the mode endpoint with mode: ' + req.query.mode);

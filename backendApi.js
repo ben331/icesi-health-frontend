@@ -136,8 +136,11 @@ function getPatientMeasurements(url, patientID) {
 function patientLogin(url, username, password) {
 	return new Promise(function(resolve, reject) {
 		console.log("pegandole a url: "+url);
+		console.log("pegandole a url: "+url+"login/user");
 		request.post(url+"login/user", {json: {"UID":username,"PASS":password}}, function (error, response, body) {
 			console.log('esto es response'+response);
+			console.log(username);
+			console.log(password);
 			console.log(body);
 			console.log(error);
 			if (!error && response.statusCode == 200) {
